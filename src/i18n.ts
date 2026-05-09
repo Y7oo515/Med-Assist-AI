@@ -1,0 +1,198 @@
+export type Lang = "ar" | "en";
+
+const translations = {
+  en: {
+    // Auth
+    appName: "MedAssist AI",
+    appSubtitle: "Your intelligent health information assistant",
+    signIn: "Sign In",
+    createAccount: "Create Account",
+    email: "Email",
+    password: "Password",
+    emailPlaceholder: "you@example.com",
+    passwordPlaceholder: "Min. 6 characters",
+    authDisclaimer: "This application provides general health information only. It is not a substitute for professional medical advice.",
+
+    // Header
+    new: "New",
+    history: "History",
+    signOut: "Sign Out",
+
+    // Symptom Form
+    describeSymptoms: "Describe Your Symptoms",
+    symptomsLabel: "Describe your symptoms",
+    symptomsPlaceholder: "e.g., I've been experiencing a persistent headache for the past 3 days, along with mild fever and fatigue...",
+    addMoreDetails: "Add more details (optional)",
+    hide: "Hide",
+    age: "Age",
+    agePlaceholder: "e.g., 35",
+    gender: "Gender",
+    preferNotToSay: "Prefer not to say",
+    male: "Male",
+    female: "Female",
+    other: "Other",
+    duration: "How long have you had these symptoms?",
+    selectDuration: "Select duration",
+    lessThan24h: "Less than 24 hours",
+    oneTo3Days: "1-3 days",
+    fourTo7Days: "4-7 days",
+    oneTo2Weeks: "1-2 weeks",
+    twoTo4Weeks: "2-4 weeks",
+    moreThanMonth: "More than a month",
+    additionalDetails: "Additional details",
+    additionalDetailsPlaceholder: "Existing conditions, medications, allergies...",
+    getHealthInfo: "Get Health Information",
+    analyzing: "Analyzing symptoms...",
+    send: "Send",
+
+    // Dashboard
+    consultationDetails: "Consultation Details",
+    symptoms: "Symptoms",
+    date: "Date",
+    privacyNote: "Your data is private and encrypted. Symptom data is sent to the AI model for analysis only. Consultations are stored in your personal secure account.",
+    howItWorks: "How it works",
+    howItWorksDesc: "Describe your symptoms and our AI will provide structured health information including possible conditions, recommended actions, and guidance on when to seek medical care.",
+    step1Title: "Describe",
+    step1Desc: "Enter your symptoms and details",
+    step2Title: "Analyze",
+    step2Desc: "AI processes your information",
+    step3Title: "Learn",
+    step3Desc: "Get structured health guidance",
+    analyzingMsg: "Analyzing your symptoms...",
+    analyzingSub: "This may take a few seconds",
+    somethingWentWrong: "Something went wrong",
+    consultationHistory: "Consultation History",
+    consultation: "consultation",
+    noConsultations: "No consultations yet",
+    historyWillAppear: "Your consultation history will appear here",
+    newConsultation: "New Consultation",
+
+    // Results
+    possibleConditions: "Possible Conditions",
+    recommendedActions: "Recommended Actions",
+    otcOptions: "Over-the-Counter Options",
+    lifestyleChanges: "Lifestyle Changes",
+    whenToSeeDoctor: "When to See a Doctor",
+    questionsToAskDoctor: "Questions to Ask Your Doctor",
+    severityLow: "Low Severity",
+    severityModerate: "Moderate Severity",
+    severityHigh: "High Severity",
+    severityEmergency: "Emergency - Seek Immediate Help",
+    emergencyTitle: "Seek Emergency Care",
+    emergencyDesc: "Your symptoms may indicate a serious condition that requires immediate medical attention. Please call emergency services or go to the nearest emergency room.",
+    immediate: "Immediate",
+    soon: "Soon",
+    routine: "Routine",
+    common: "common",
+    possible: "possible",
+    rare: "rare",
+
+    // Footer
+    footerDisclaimer: "MedAssist AI provides general health information for educational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment. Always consult a qualified healthcare provider for medical conditions. If you are experiencing a medical emergency, call your local emergency number immediately.",
+
+    // Language
+    language: "Language",
+    arabic: "العربية",
+    english: "English",
+  },
+  ar: {
+    // Auth
+    appName: "مساعد طبي ذكي",
+    appSubtitle: "مساعدك الذكي للمعلومات الصحية",
+    signIn: "تسجيل الدخول",
+    createAccount: "إنشاء حساب",
+    email: "البريد الإلكتروني",
+    password: "كلمة المرور",
+    emailPlaceholder: "you@example.com",
+    passwordPlaceholder: "6 أحرف على الأقل",
+    authDisclaimer: "هذا التطبيق يقدم معلومات صحية عامة فقط. وهو ليس بديلاً عن الاستشارة الطبية المهنية.",
+
+    // Header
+    new: "جديد",
+    history: "السجل",
+    signOut: "خروج",
+
+    // Symptom Form
+    describeSymptoms: "صف أعراضك",
+    symptomsLabel: "صف أعراضك",
+    symptomsPlaceholder: "مثال: أعاني من صداع مستمر منذ 3 أيام مع حمى خفيفة وإرهاق...",
+    addMoreDetails: "إضافة تفاصيل أكثر (اختياري)",
+    hide: "إخفاء",
+    age: "العمر",
+    agePlaceholder: "مثال: 35",
+    gender: "الجنس",
+    preferNotToSay: "أفضل عدم القول",
+    male: "ذكر",
+    female: "أنثى",
+    other: "آخر",
+    duration: "منذ متى لديك هذه الأعراض؟",
+    selectDuration: "اختر المدة",
+    lessThan24h: "أقل من 24 ساعة",
+    oneTo3Days: "1-3 أيام",
+    fourTo7Days: "4-7 أيام",
+    oneTo2Weeks: "1-2 أسبوع",
+    twoTo4Weeks: "2-4 أسابيع",
+    moreThanMonth: "أكثر من شهر",
+    additionalDetails: "تفاصيل إضافية",
+    additionalDetailsPlaceholder: "أمراض مزمنة، أدوية حالية، حساسية...",
+    getHealthInfo: "احصل على معلومات صحية",
+    analyzing: "جاري تحليل الأعراض...",
+    send: "إرسال",
+
+    // Dashboard
+    consultationDetails: "تفاصيل الاستشارة",
+    symptoms: "الأعراض",
+    date: "التاريخ",
+    privacyNote: "بياناتك خاصة ومشفرة. يتم إرسال بيانات الأعراض إلى نموذج الذكاء الاصطناعي للتحليل فقط. يتم تخزين الاستشارات في حسابك الآمن الشخصي.",
+    howItWorks: "كيف يعمل",
+    howItWorksDesc: "صف أعراضك وسيقدم لك الذكاء الاصطناعي معلومات صحية منظمة تشمل الحالات المحتملة والإجراءات الموصى بها وإرشادات حول متى يجب طلب الرعاية الطبية.",
+    step1Title: "الوصف",
+    step1Desc: "أدخل أعراضك وتفاصيلك",
+    step2Title: "التحليل",
+    step2Desc: "الذكاء الاصطناعي يعالج معلوماتك",
+    step3Title: "النتائج",
+    step3Desc: "احصل على إرشادات صحية منظمة",
+    analyzingMsg: "جاري تحليل أعراضك...",
+    analyzingSub: "قد يستغرق هذا بضع ثوانٍ",
+    somethingWentWrong: "حدث خطأ ما",
+    consultationHistory: "سجل الاستشارات",
+    consultation: "استشارة",
+    noConsultations: "لا توجد استشارات بعد",
+    historyWillAppear: "سيظهر سجل استشاراتك هنا",
+    newConsultation: "استشارة جديدة",
+
+    // Results
+    possibleConditions: "الحالات المحتملة",
+    recommendedActions: "الإجراءات الموصى بها",
+    otcOptions: "الأدوية المتاحة بدون وصفة",
+    lifestyleChanges: "تغييرات نمط الحياة",
+    whenToSeeDoctor: "متى يجب زيارة الطبيب",
+    questionsToAskDoctor: "أسئلة لطرحها على الطبيب",
+    severityLow: "خطورة منخفضة",
+    severityModerate: "خطورة متوسطة",
+    severityHigh: "خطورة عالية",
+    severityEmergency: "طوارئ - اطلب المساعدة فوراً",
+    emergencyTitle: "اطلب الرعاية الطبية الطارئة",
+    emergencyDesc: "قد تشير أعراضك إلى حالة خطيرة تتطلب رعاية طبية فورية. يرجى الاتصال بخدمات الطوارئ أو الذهاب إلى أقرب غرفة طوارئ.",
+    immediate: "فوري",
+    soon: "قريب",
+    routine: "روتيني",
+    common: "شائع",
+    possible: "ممكن",
+    rare: "نادر",
+
+    // Footer
+    footerDisclaimer: "مساعد طبي ذكي يقدم معلومات صحية عامة لأغراض تعليمية فقط. وهو ليس بديلاً عن الاستشارة الطبية المهنية أو التشخيص أو العلاج. استشر دائماً مقدم رعاية صحية مؤهل للحالات الطبية. إذا كنت تعاني من حالة طوارئ طبية، اتصل برقم الطوارئ المحلي فوراً.",
+
+    // Language
+    language: "اللغة",
+    arabic: "العربية",
+    english: "English",
+  },
+} as const;
+
+export type TranslationKey = keyof typeof translations.en;
+
+export function t(lang: Lang, key: TranslationKey): string {
+  return translations[lang][key] || translations.en[key] || key;
+}
