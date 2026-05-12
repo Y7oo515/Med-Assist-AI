@@ -257,42 +257,33 @@ Deno.serve(async (req: Request) => {
     let content: string | null = null;
     let lastError = "";
 
-    // Primary: OpenAI gpt-4o
-    const openaiKey = Deno.env.get("OPENAI_API_KEY");
-    if (openaiKey) {
-      try {
-        const openaiResponse = await fetch("https://api.openai.com/v1/chat/completions", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${openaiKey}`,
-          },
-          body: JSON.stringify({
-            model: "gpt-4o",
-            messages: [
-              { role: "system", content: systemPrompt },
-              { role: "user", content: userMessage },
-            ],
-            temperature: 0.3,
-            max_tokens: 2500,
-            response_format: { type: "json_object" },
-          }),
-        });
+    // Primary: LLM7.io - qwen/qwen3-32b (free, no API key needed)
+    try {
+      const llm7Response = await fetch("https://api.llm7.io/v1/chat/completions", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          model: "qwen/qwen3-32b",
+          messages: [
+            { role: "system", content: systemPrompt },
+            { role: "user", content: userMessage },
+          ],
+          temperature: 0.3,
+          max_tokens: 2500,
+        }),
+      });
 
-        if (openaiResponse.ok) {
-          const openaiData = await openaiResponse.json();
-          content = openaiData.choices?.[0]?.message?.content || null;
-        } else {
-          const errText = await openaiResponse.text();
-          lastError = `OpenAI returned ${openaiResponse.status}: ${errText.substring(0, 200)}`;
-          console.error("OpenAI error:", lastError);
-        }
-      } catch (e) {
-        lastError = e instanceof Error ? e.message : "OpenAI request failed";
-        console.error("OpenAI failed:", lastError);
+      if (llm7Response.ok) {
+        const llm7Data = await llm7Response.json();
+        content = llm7Data.choices?.[0]?.message?.content || null;
+      } else {
+        const errText = await llm7Response.text();
+        lastError = `LLM7 returned ${llm7Response.status}: ${errText.substring(0, 200)}`;
+        console.error("LLM7 error:", lastError);
       }
-    } else {
-      lastError = "OPENAI_API_KEY not configured";
+    } catch (e) {
+      lastError = e instanceof Error ? e.message : "LLM7 request failed";
+      console.error("LLM7 failed:", lastError);
     }
 
     // Fallback: OpenRouter
